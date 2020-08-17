@@ -120,7 +120,7 @@ class CBoW:
                 simmilar_w.append(tmp)
             acc += (self.token[np.argmax(simmilar_w)] == self.words[i+3]) * 1
 
-        acc = acc / (len(self.words)-3)
+        acc = acc / (len(self.words) - 3)
         return acc
 
 
