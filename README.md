@@ -1,6 +1,6 @@
 # 자연어처리 모델 직접 구현하는 곳
 
-> Statistical Model
+> Statistic Models
 
 1. Luhn Summarize
 2. Naive Bayes Classifier
@@ -11,7 +11,8 @@
 
 
 
-> Deep Learning Model
+> Deep Learning Models
 
 1. XOR Gate
-2. Word2Vec (예정)
+2. Word2Vec
+   - CBoW
