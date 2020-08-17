@@ -47,6 +47,6 @@ if __name__ == "__main__":
     Y = np.array([0, 1, 1, 0])
 
     xor = XOR()
-    pred, y_hat = xor.optimize(X, Y, 5, alpha = .01, epoch = 10000)
+    pred, y_hat = xor.optimize(X, Y, 4, alpha = .01, epoch = 10000)
     print('pred:', pred)
     print('y_hat:', y_hat)
