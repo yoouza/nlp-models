@@ -86,7 +86,7 @@ class CBoW:
         plt.ylabel("Loss")
         plt.show()
     
-    def similarity(self):
+    def token_vector(self):
         return pd.DataFrame(self.W1, index = self.token)
     
     def similar_tokens(self, N_similar):
@@ -115,21 +115,21 @@ class CBoW:
             w = self.W1[word_1] - self.W1[word_2] + self.W1[word_3]
 
             simmilar_w = []
-            for j in range(len(self.token)):
+            for j, t in enumerate(self.token):
                 tmp = np.dot(w, self.W1[j]) / np.linalg.norm(w) * np.linalg.norm(self.W1[j])
                 simmilar_w.append(tmp)
             acc += (self.token[np.argmax(simmilar_w)] == self.words[i+3]) * 1
 
-        acc = acc / (len(self.words) - 3)
+        acc = acc / (len(self.words)-3)
         return acc
 
 
 if __name__ == "__main__":
     doc = "you will never know until you try."
-    cb = CBoW(doc, 4, 2, 0.01, 10000)
+    cb = CBoW(doc, 4, 2, 0.01, 1000)
     
     cb.optimize()
     cb.plot()
-    cb.similarity()
+    cb.token_vector()
     cb.similar_tokens(3)
     cb.accuracy()
